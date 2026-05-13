@@ -7,6 +7,7 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+			"./1778674405382592375.html"
 	],
 	prefix: "",
 	theme: {
@@ -18,7 +19,26 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'display': ['Cormorant Garamond', 'serif'],
+				'body': ['Golos Text', 'sans-serif'],
+			},
 			colors: {
+				bronze: {
+					DEFAULT: '#CD7F32',
+					light: '#E8A85A',
+					dark: '#8B5A1A',
+				},
+				sand: {
+					DEFAULT: '#F5DEB3',
+					light: '#FAF5EC',
+					dark: '#E8C878',
+				},
+				teal: {
+					DEFAULT: '#2E8B8B',
+					light: '#4AACAC',
+					dark: '#1A6666',
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -88,7 +108,16 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease forwards',
+				'float': 'float 4s ease-in-out infinite',
+			},
+			keyframes: {
+				...({} as Record<string, Record<string, Record<string, string>>>),
+				'fade-in': {
+					from: { opacity: '0', transform: 'translateY(20px)' },
+					to: { opacity: '1', transform: 'translateY(0)' },
+				},
 			}
 		}
 	},
