@@ -7,38 +7,50 @@ const raccoons = [
   {
     name: "Енотыч",
     emoji: "🎣",
-    role: "Хранитель набережной",
-    ritual: "Встречает рассветы и провожает закаты над морем",
-    color: "#8B5A1A",
+    role: "Дедушка · Хранитель набережной",
+    ritual: "Морской капитан с удочкой. Встречает рассветы и рыбачит на рассвете",
+    color: "#6B4A1A",
     photo: "https://cdn.poehali.dev/projects/898bd4ed-32e3-4e08-862f-895318af938b/bucket/ff4e51b2-f6e2-43a9-a04a-ca9e02a20012.jpg",
   },
   {
     name: "Енофья",
-    emoji: "🌊",
-    role: "Хранительница пляжа",
-    ritual: "Собирает морские камешки для загадывания желаний",
-    color: "#2E8B8B",
+    emoji: "🧺",
+    role: "Бабушка · Хранительница парка",
+    ritual: "Ходит с корзиной и угощает всех шишками да пирожками",
+    color: "#5A7A3A",
+    photo: "https://cdn.poehali.dev/projects/898bd4ed-32e3-4e08-862f-895318af938b/bucket/e54de512-8c1b-413c-89a9-e1d31e422a45.png",
   },
   {
     name: "Туапсей",
-    emoji: "🏔️",
-    role: "Хранитель горных троп",
-    ritual: "Указывает путь заблудившимся путникам",
-    color: "#5A7A3A",
+    emoji: "🚢",
+    role: "Папа · Хранитель причала",
+    ritual: "Капитан в фуражке, смотрит на море с морской трубкой",
+    color: "#2A5A6A",
+    photo: "https://cdn.poehali.dev/projects/898bd4ed-32e3-4e08-862f-895318af938b/bucket/f588f394-f57a-45f7-9400-8984d16ee662.png",
   },
   {
     name: "Енира",
     emoji: "🌸",
-    role: "Хранительница парка",
-    ritual: "Подкармливает птиц в любую погоду",
+    role: "Дочка · Хранительница цветника",
+    ritual: "Держит горшочек с цветами и дарит радость прохожим",
     color: "#9B4A6A",
+    photo: "https://cdn.poehali.dev/projects/898bd4ed-32e3-4e08-862f-895318af938b/bucket/8e23b422-c248-4328-8dc0-05d3efbdc05b.png",
   },
   {
-    name: "Еновей",
-    emoji: "🚂",
-    role: "Хранитель вокзала",
-    ritual: "Провожает гостей и встречает возвращающихся домой",
-    color: "#4A5A8A",
+    name: "Еноша",
+    emoji: "🎒",
+    role: "Сын · Хранитель приключений",
+    ritual: "С рюкзаком и бабочкой на лапе — исследует каждый уголок города",
+    color: "#4A6A3A",
+    photo: "https://cdn.poehali.dev/projects/898bd4ed-32e3-4e08-862f-895318af938b/bucket/622ddee2-b943-4830-993e-c9a20c21d66d.png",
+  },
+  {
+    name: "Тыдочка",
+    emoji: "😴",
+    role: "Малыш · Хранитель отдыха",
+    ritual: "Дремлет на лавочке в парке — символ уюта и покоя",
+    color: "#4A5A7A",
+    photo: "https://cdn.poehali.dev/projects/898bd4ed-32e3-4e08-862f-895318af938b/bucket/c73d42a8-0ea9-4cad-8025-feff9e4ec812.png",
   },
   {
     name: "Еносик",
@@ -46,20 +58,15 @@ const raccoons = [
     role: "Хранитель ночного неба",
     ritual: "Считает звёзды над Туапсе каждую ночь",
     color: "#6A3A8A",
+    photo: null,
   },
   {
-    name: "Еноша",
-    emoji: "🎭",
-    role: "Хранитель историй",
-    ritual: "Рассказывает легенды города детям",
-    color: "#8A5A3A",
-  },
-  {
-    name: "Тыдочка",
-    emoji: "🍊",
-    role: "Хранительница рынка",
-    ritual: "Приносит удачу торговцам на местном базаре",
-    color: "#CD6A2E",
+    name: "Еновей",
+    emoji: "🚂",
+    role: "Хранитель вокзала",
+    ritual: "Провожает гостей и встречает возвращающихся домой",
+    color: "#3A4A7A",
+    photo: null,
   },
 ];
 
@@ -343,40 +350,70 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
             {raccoons.map((r, i) => (
               <div
                 key={r.name}
-                className="raccoon-card reveal rounded-2xl p-5 cursor-pointer"
+                className="raccoon-card reveal rounded-2xl overflow-hidden cursor-pointer"
                 style={{
                   background: "#FFFBF3",
-                  border: `1.5px solid ${r.color}30`,
-                  boxShadow: "0 4px 16px rgba(42,26,10,0.07)",
+                  border: `1.5px solid ${r.color}40`,
+                  boxShadow: "0 4px 20px rgba(42,26,10,0.09)",
                   transitionDelay: `${i * 0.05}s`,
                 }}
               >
+                {/* Photo area */}
                 <div
-                  className="w-14 h-14 rounded-xl overflow-hidden flex items-center justify-center text-3xl mb-3 mx-auto"
-                  style={{ background: `${r.color}15` }}
+                  className="relative w-full overflow-hidden"
+                  style={{ height: "200px", background: `linear-gradient(135deg, ${r.color}18, ${r.color}08)` }}
                 >
-                  {"photo" in r && r.photo ? (
-                    <img src={r.photo as string} alt={r.name} className="w-full h-full object-cover" />
+                  {r.photo ? (
+                    <img
+                      src={r.photo}
+                      alt={r.name}
+                      className="w-full h-full object-cover"
+                      style={{ objectPosition: "center top" }}
+                    />
                   ) : (
-                    r.emoji
+                    <div className="w-full h-full flex flex-col items-center justify-center gap-2">
+                      <span className="text-5xl opacity-40">{r.emoji}</span>
+                      <span
+                        className="text-xs font-semibold px-3 py-1 rounded-full"
+                        style={{
+                          background: `${r.color}20`,
+                          color: r.color,
+                          border: `1px dashed ${r.color}60`,
+                        }}
+                      >
+                        скоро
+                      </span>
+                    </div>
                   )}
+                  {/* Role badge */}
+                  <div
+                    className="absolute bottom-0 left-0 right-0 px-3 py-2"
+                    style={{
+                      background: "linear-gradient(to top, rgba(42,26,10,0.75) 0%, transparent 100%)",
+                    }}
+                  >
+                    <p className="text-xs font-semibold text-center" style={{ color: "rgba(245,222,179,0.95)" }}>
+                      {r.role.split(" · ")[0]}
+                    </p>
+                  </div>
                 </div>
-                <h3
-                  className="text-center font-bold mb-1"
-                  style={{ fontFamily: "'Cormorant Garamond', serif", color: r.color, fontSize: "1.15rem" }}
-                >
-                  {r.name}
-                </h3>
-                <p className="text-center text-xs font-semibold mb-2 uppercase tracking-wide" style={{ color: "#9A8060" }}>
-                  {r.role}
-                </p>
-                <p className="text-center text-xs leading-relaxed" style={{ color: "#6A5A40" }}>
-                  {r.ritual}
-                </p>
+
+                {/* Info */}
+                <div className="p-4">
+                  <h3
+                    className="text-center font-bold mb-1"
+                    style={{ fontFamily: "'Cormorant Garamond', serif", color: r.color, fontSize: "1.2rem" }}
+                  >
+                    {r.name}
+                  </h3>
+                  <p className="text-center text-xs leading-relaxed" style={{ color: "#6A5A40" }}>
+                    {r.ritual}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
