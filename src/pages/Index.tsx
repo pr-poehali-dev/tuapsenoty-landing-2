@@ -6,10 +6,11 @@ const PLANETA_URL = "https://planeta.ru/campaigns/244619";
 const raccoons = [
   {
     name: "Енотыч",
-    emoji: "🦝",
+    emoji: "🎣",
     role: "Хранитель набережной",
     ritual: "Встречает рассветы и провожает закаты над морем",
     color: "#8B5A1A",
+    photo: "https://cdn.poehali.dev/projects/898bd4ed-32e3-4e08-862f-895318af938b/bucket/ff4e51b2-f6e2-43a9-a04a-ca9e02a20012.jpg",
   },
   {
     name: "Енофья",
@@ -355,10 +356,14 @@ export default function Index() {
                 }}
               >
                 <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center text-3xl mb-3 mx-auto"
+                  className="w-14 h-14 rounded-xl overflow-hidden flex items-center justify-center text-3xl mb-3 mx-auto"
                   style={{ background: `${r.color}15` }}
                 >
-                  {r.emoji}
+                  {"photo" in r && r.photo ? (
+                    <img src={r.photo as string} alt={r.name} className="w-full h-full object-cover" />
+                  ) : (
+                    r.emoji
+                  )}
                 </div>
                 <h3
                   className="text-center font-bold mb-1"
@@ -513,12 +518,20 @@ export default function Index() {
               <span className="ml-auto text-xs text-[#F5DEB3] opacity-80">Май 2025</span>
             </div>
             <div className="p-7">
-              <div className="flex items-start gap-4">
-                <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center text-3xl flex-shrink-0 float-anim"
-                  style={{ background: "rgba(205, 127, 50, 0.12)" }}
-                >
-                  🏆
+              <div className="flex flex-col sm:flex-row gap-6">
+                <div className="flex-shrink-0 mx-auto sm:mx-0">
+                  <img
+                    src="https://cdn.poehali.dev/projects/898bd4ed-32e3-4e08-862f-895318af938b/bucket/ff4e51b2-f6e2-43a9-a04a-ca9e02a20012.jpg"
+                    alt="Енотыч — бронзовая скульптура"
+                    className="raccoon-card rounded-2xl shadow-xl"
+                    style={{
+                      width: "180px",
+                      height: "200px",
+                      objectFit: "cover",
+                      border: "3px solid rgba(205,127,50,0.35)",
+                    }}
+                  />
+                  <p className="text-center text-xs mt-2 italic font-medium" style={{ color: "#CD7F32" }}>Енотыч готов!</p>
                 </div>
                 <div>
                   <h3
@@ -531,6 +544,10 @@ export default function Index() {
                     Первый из восьми хранителей — Енотыч — уже прошёл отливку и сейчас проходит
                     стадию патинирования. Бронза приобретает свой неповторимый тёплый цвет.
                     Совсем скоро он встанет на набережной Туапсе.
+                  </p>
+                  <p className="mt-3 leading-relaxed text-sm" style={{ color: "#6A5040" }}>
+                    Смотрите: морской капитан с удочкой и ведёрком — настоящий хозяин причала.
+                    Именно таким и должен быть хранитель набережной.
                   </p>
                   <div
                     className="inline-flex items-center gap-2 mt-4 rounded-full px-4 py-1.5 text-sm font-semibold"
